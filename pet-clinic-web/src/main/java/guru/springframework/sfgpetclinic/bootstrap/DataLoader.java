@@ -53,10 +53,10 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner2.setFirstName("Fisnik 2");
-        owner2.setLastName("Shabani 2");
-        owner1.setAddress("HoShiMin2 363B");
-        owner1.setCity("Shkup2");
+        owner2.setFirstName("Trazovac");
+        owner2.setLastName("Kadriu");
+        owner1.setAddress("Gllazhnje");
+        owner1.setCity("Dardani");
         owner1.setTelephone("+38977773018");
 
         Pet trazoCat = new Pet();
