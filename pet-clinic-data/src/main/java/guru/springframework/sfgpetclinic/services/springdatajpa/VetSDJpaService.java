@@ -39,12 +39,10 @@ public class VetSDJpaService implements VetService {
     @Override
     public void delete(Vet object) {
         vetRepository.delete(object);
-
     }
 
     @Override
     public void deleteById(Long aLong) {
         vetRepository.deleteById(aLong);
-
     }
 }
