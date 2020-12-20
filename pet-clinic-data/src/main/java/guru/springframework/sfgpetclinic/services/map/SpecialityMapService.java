@@ -8,19 +8,15 @@ import java.util.Set;
 
 @Service
 public class SpecialityMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+
     @Override
     public Set<Specialty> findAll() {
         return super.findAll();
     }
 
     @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-    }
-
-    @Override
-    public void delete(Specialty object) {
-        super.delete(object);
+    public Specialty findById(Long id) {
+        return super.findById(id);
     }
 
     @Override
@@ -29,7 +25,12 @@ public class SpecialityMapService extends AbstractMapService<Specialty, Long> im
     }
 
     @Override
-    public Specialty findbyId(Long id) {
-        return super.findById(id);
+    public void delete(Specialty object) {
+        super.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        super.deleteById(id);
     }
 }

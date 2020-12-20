@@ -23,33 +23,32 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
     }
 
     @Override
-    public void deleteById(Long id) {
-        super.deleteById(id);
-
-    }
-
-    @Override
-    public void delete(Vet object) {
-        super.delete(object);
-
-    }
-
-    @Override
-    public Vet findbyId(Long id) {
+    public Vet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
     public Vet save(Vet object) {
+
         if (object.getSpecialties().size() > 0){
-            object.getSpecialties().forEach(specialty -> {
-                if (specialty.getId() == null){
-                    Specialty savedSpecialty = specialtiesService.save(specialty);
-                    specialty.setId(savedSpecialty.getId());
+            object.getSpecialties().forEach(speciality -> {
+                if(speciality.getId() == null){
+                    Specialty savedSpecialty = specialtiesService.save(speciality);
+                    speciality.setId(savedSpecialty.getId());
                 }
             });
-
         }
+
         return super.save(object);
+    }
+
+    @Override
+    public void delete(Vet object) {
+        super.delete(object);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        super.deleteById(id);
     }
 }
