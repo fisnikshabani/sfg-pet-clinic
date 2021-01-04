@@ -13,6 +13,7 @@ class OwnerMapServiceTest {
     OwnerMapService ownerMapService;
 
     final Long ownerId = 1L;
+    final String lastName = "Shabani";
 
     @BeforeEach
     void setUp() {
@@ -56,9 +57,20 @@ class OwnerMapServiceTest {
 
     @Test
     void deleteById() {
+        ownerMapService.deleteById(ownerId);
+        assertEquals(0, ownerMapService.findAll().size());
     }
 
     @Test
     void findByLastName() {
+        Owner fisnik = ownerMapService.findByLastName(lastName);
+        assertNotNull(fisnik);
+        assertEquals(ownerId, fisnik.getId());
+    }
+
+    @Test
+    void findByLastNameNotFound() {
+        Owner fisnik = ownerMapService.findByLastName("Shabani");
+        assertNull(fisnik);
     }
 }
