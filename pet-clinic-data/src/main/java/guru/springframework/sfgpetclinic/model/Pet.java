@@ -17,12 +17,12 @@ import java.util.Set;
 public class Pet extends BaseEntity {
 
    @Builder
-   public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthdate, Set<Visit> visits) {
+   public Pet(Long id, String name, PetType petType, Owner owner, LocalDate birthDate, Set<Visit> visits) {
         super(id);
         this.name = name;
         this.petType = petType;
         this.owner = owner;
-        this.birthdate = birthdate;
+        this.birthDate = birthDate;
         this.visits = visits;
     }
 
@@ -38,7 +38,7 @@ public class Pet extends BaseEntity {
     private Owner owner;
 
     @Column(name = "birth_date")
-    private LocalDate birthdate;
+    private LocalDate birthDate;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
