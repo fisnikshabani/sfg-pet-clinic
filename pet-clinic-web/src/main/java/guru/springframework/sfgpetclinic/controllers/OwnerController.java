@@ -12,9 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created by jt on 7/22/18.
- */
+
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
@@ -102,5 +100,4 @@ public class OwnerController {
             return "redirect:/owners/" + savedOwner.getId();
         }
     }
-
 }
