@@ -1,8 +1,8 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.repositories.SpecialtyRepository;
-import guru.springframework.sfgpetclinic.model.Specialty;
-import guru.springframework.sfgpetclinic.services.SpecialtiesService;
+import guru.springframework.sfgpetclinic.model.Speciality;
+import guru.springframework.sfgpetclinic.services.SpecialtyService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class SpecialtySDJpaService implements SpecialtiesService {
+public class SpecialtySDJpaService implements SpecialtyService {
 
     private final SpecialtyRepository specialtyRepository;
 
@@ -20,24 +20,24 @@ public class SpecialtySDJpaService implements SpecialtiesService {
     }
 
     @Override
-    public Set<Specialty> findAll() {
-       Set<Specialty> specialties = new HashSet<>();
+    public Set<Speciality> findAll() {
+       Set<Speciality> specialties = new HashSet<>();
        specialtyRepository.findAll().forEach(specialties::add);
        return specialties;
     }
 
     @Override
-    public Specialty findById(Long aLong) {
+    public Speciality findById(Long aLong) {
         return specialtyRepository.findById(aLong).orElse(null);
     }
 
     @Override
-    public Specialty save(Specialty object) {
+    public Speciality save(Speciality object) {
         return specialtyRepository.save(object);
     }
 
     @Override
-    public void delete(Specialty object) {
+    public void delete(Speciality object) {
         specialtyRepository.delete(object);
     }
 
